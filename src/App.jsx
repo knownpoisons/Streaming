@@ -3,10 +3,12 @@ import { getApiKey } from './lib/tmdb';
 import ApiKeyPrompt from './components/ApiKeyPrompt';
 import Search from './components/Search';
 import Recommendations from './components/Recommendations';
+import MyFavorites from './components/MyFavorites';
 
 const TABS = [
   { id: 'recs', label: 'For You', icon: '✨' },
   { id: 'search', label: 'Search', icon: '🔍' },
+  { id: 'favorites', label: 'My List', icon: '❤️' },
 ];
 
 export default function App() {
@@ -70,6 +72,7 @@ export default function App() {
       <main className="max-w-5xl mx-auto px-4 py-6">
         {activeTab === 'search' && <Search country={country} />}
         {activeTab === 'recs' && <Recommendations country={country} />}
+        {activeTab === 'favorites' && <MyFavorites />}
       </main>
 
       {/* Footer */}
